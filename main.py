@@ -5,11 +5,13 @@ import time
 
 # main function
 
+
 def read_mode(start):
     input("\nPress 'Enter' when you have finished reading.\n")
     end = time.time()
     print("Time: " + str(round(end-start, 2)) + " seconds")
     return "Time: " + str(round(end-start, 2)) + " seconds\n"
+
 
 def type_mode(unscrambled_words, start):
     text = str(input("\nType the text that appears on the screen as words:\n"))
@@ -22,6 +24,7 @@ def type_mode(unscrambled_words, start):
     end = time.time()
     print("Time: " + str(round(end-start, 2)) + " seconds")
     return "Accuracy: " + str(round(percentage, 2)) + "%, " + "Time: " + str(round(end-start, 2)) + " seconds\n"
+
 
 def main():
     print("This program consists of two game modes:\n\t"
@@ -72,6 +75,7 @@ def main():
         results += type_mode(unscrambled_words, start)
     with open(sys.argv[2], 'a') as out_file:
         out_file.write(results)
+
 
 if __name__ == "__main__":
     main()
